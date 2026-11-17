@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration</title>
+<style>
+  body { font-family: "Times New Roman", Times, serif; margin: 8px; color: #000; }
+  h1 { text-align: center; font-size: 36px; margin: 0 0 28px; }
+  table { width: 100%; border: 3px ridge #888; border-spacing: 2px; }
+  td, th { border: 1px solid #888; padding: 7px 6px; font-size: 18px; }
+  th { text-align: center; }
+  .section { font-weight: bold; text-align: center; }
+  .field-label { width: 31%; }
+  .control { width: 220px; max-width: 95%; }
+  .gender-cell label { display: block; margin: 2px 0; }
+  .interests td { width: 50%; }
+  .about { text-align: center; }
+  .about textarea { width: 50%; max-width: 95%; }
+  .buttons { text-align: center; }
+  .terms { text-align: center; margin-top: 8px; font-size: 20px; }
+  .terms a { color: #551a8b; text-decoration: none; }
+  .required { color: #000; }
+  @media (max-width: 600px) {
+    td, th { font-size: 16px; }
+    .field-label { width: 35%; }
+    .about textarea { width: 90%; }
+  }
+</style>
+</head>
+<body>
+<h1>Registration</h1>
+<form action="Thankyou.html" method="get">
+<input type="hidden" name="user_id" value="STU2026">
+<table>
+<tr><th class="section" colspan="2">Personal Data</th></tr>
+<tr><td class="field-label"><label for="first">First Name</label></td><td><input class="control" id="first" name="first_name" type="text" pattern="[A-Za-z]+([ '-][A-Za-z]+)*" required></td></tr>
+<tr><td><label for="last">Last Name</label></td><td><input class="control" id="last" name="last_name" type="text" pattern="[A-Za-z]+([ '-][A-Za-z]+)*" required></td></tr>
+<tr><td><label for="email">Email</label></td><td><input class="control" id="email" name="email" type="email" placeholder="example@domain.com" required></td></tr>
+<tr><td><label for="password">Password</label></td><td><input class="control" id="password" name="password" type="password" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}" required></td></tr>
+<tr><td><label for="repeat">Repeat Password</label></td><td><input class="control" id="repeat" name="repeat_password" type="password" minlength="8" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}" required></td></tr>
+<tr><td><label for="picture">Upload Picture</label></td><td><input id="picture" name="user_picture" type="file" accept="image/*"></td></tr>
+<tr><td>Gender</td><td class="gender-cell"><label><input type="radio" name="gender" value="Male" required> Male</label><label><input type="radio" name="gender" value="Female"> Female</label></td></tr>
+<tr><td><label for="faculty">Faculty</label></td><td><select id="faculty" name="faculty" required>
+<option value="Computer Science">Computer Science</option><option>Engineering</option><option>Commerce</option><option>Science</option><option>Arts</option><option>Other</option>
+</select></td></tr>
+<tr><th class="section" colspan="2">Interests</th></tr>
+<tr class="interests"><td><label><input type="checkbox" name="interests" value="Programming"> Programming</label></td><td><label><input type="checkbox" name="interests" value="Drawing"> Drawing</label></td></tr>
+<tr class="interests"><td><label><input type="checkbox" name="interests" value="Reading"> Reading</label></td><td><label><input type="checkbox" name="interests" value="Playing Football"> Playing Football</label></td></tr>
+<tr class="interests"><td><label><input type="checkbox" name="interests" value="Swimming"> Swimming</label></td><td><label><input type="checkbox" name="interests" value="Music"> Music</label></td></tr>
+<tr><td class="about" colspan="2"><strong>About you</strong><br><textarea name="about" rows="3"></textarea></td></tr>
+<tr><td><label for="phone">Phone Number</label></td><td><input class="control" id="phone" name="phone" type="tel" pattern="01[0125][0-9]{8}" title="Enter an 11-digit Egyptian mobile number starting with 010, 011, 012 or 015." required></td></tr>
+<tr><td><label for="gpa">GPA</label></td><td><input id="gpa" name="gpa" type="number" min="0" max="4" step="0.1" required></td></tr>
+<tr><td><label for="dob">Date of Birth</label></td><td><input id="dob" name="date_of_birth" type="date"></td></tr>
+<tr><td class="buttons" colspan="2"><button type="submit">Ok</button> &nbsp; <button type="reset">Cancel</button></td></tr>
+</table>
+<div class="terms"><label><input type="checkbox" name="terms" required> <a href="Terms.html" target="_blank" rel="noopener">I agreed to all terms and conditions</a></label></div>
+</form>
+</body>
+</html>
